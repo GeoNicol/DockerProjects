@@ -22,7 +22,6 @@ services:
 
 volumes:
   drupal-data:
-  
   drupal-modules:
   drupal-profiles:
   drupal-sites:
