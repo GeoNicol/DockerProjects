@@ -1,4 +1,4 @@
-#Drupal Postres Docker Setup
+# Drupal Postgres Docker Setup
 
 <h1>Manual</h1>
 
