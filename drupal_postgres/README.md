@@ -12,4 +12,5 @@
 
 
 <h2>Cleanup</h2>
+
 Run `docker-compose down -v` (The -v flag makes sure to remove all the volumes created during the setup)
