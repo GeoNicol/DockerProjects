@@ -8,6 +8,7 @@ services:
     volumes:
       - drupal-modules:/var/www/html/modules
       - drupal-profiles:/var/www/html/profiles
+      - drupal-sites:/var/www/html/sites      
       - drupal-themes:/var/www/html/themes
     restart: always
 
@@ -16,9 +17,14 @@ services:
     restart: always
     environment:
         POSTGRES_PASSWORD: example
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
 
 volumes:
+  drupal-data:
+  
   drupal-modules:
   drupal-profiles:
+  drupal-sites:
   drupal-themes:
     
