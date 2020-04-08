@@ -6,9 +6,9 @@ services:
     ports:
       - '8080:80'
     volumes:
-      - /var/www/html/modules
-      - /var/www/html/profiles
-      - /var/www/html/themes
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
     restart: always
 
   postgres:
@@ -17,4 +17,8 @@ services:
     environment:
         POSTGRES_PASSWORD: example
 
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-themes:
     
