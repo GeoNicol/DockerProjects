@@ -9,7 +9,7 @@ aws s3 cp s3://[folder]/$BACKUP_FILE /var/opt/mssql/backup
 BAK_FILE=`find -type f -name "*.bak"`
 
 #Restore the DB
-/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '[STRONG_PASSWORD]' -Q 'RESTORE DATABASE [DB_NAME] FROM DISK = "/var/opt/mssql/backup/'$BAK_FILE'" WITH REPLACE, MOVE "[FILE_NAME]" TO "/var/opt/mssql/data/[DB_NAME].MDF", MOVE "sigweb_Log" TO "/var/opt/mssql/data/[DB_NAME].LDF"'
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '[STRONG_PASSWORD]' -Q 'RESTORE DATABASE [DB_NAME] FROM DISK = "/var/opt/mssql/backup/'$BAK_FILE'" WITH REPLACE, MOVE "[FILE_NAME]" TO "/var/opt/mssql/data/[DB_NAME].MDF", MOVE "[DB_NAME_LOG]" TO "/var/opt/mssql/data/[DB_NAME].LDF"'
 
 #remove downloaded files
 rm $BAK_FILE
